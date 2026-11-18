@@ -23,6 +23,7 @@ from pathlib import Path
 
 import pygame
 
+
 # Game settings.
 # Change these values to customize the game without changing its rules.
 
@@ -223,8 +224,7 @@ class Apple:
         # Choose from valid grid cells not occupied by the snake.
         occupied_cells = {(snake.head.x, snake.head.y)}
         occupied_cells.update(
-                (segment.x, segment.y,)
-                for segment in snake.tail
+            (segment.x, segment.y) for segment in snake.tail
         )
         available_cells = [
             (x, y)
